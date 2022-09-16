@@ -4,7 +4,7 @@
         <title>For P5</title>
         <style>
             .mid {
-                dislay: flex;
+                display: flex;
                 flex-direction: column;
                 justify-content:center;
                 align-content: center;
@@ -104,8 +104,15 @@
                 inst.innerText = "Copy and goto (including view-source) :";
                 
               
-              navigator.clipboard.writeText(url);
-              alert("The link is copied, you may paste it now");
+              navigator.clipboard
+                          .writeText(url)
+                          .then(() => {
+                                        alert("The link is copied, you may paste it now");
+                                       })
+                         .catch(() => {
+                                         alert("something went wrong");
+                                       });
+              
 
               gturl.innerHTML = url ;
                 const sic = document.getElementById('showic');
@@ -124,9 +131,15 @@
                 fhtml = fhtml.replace(text[k],"");
                 }
                 ftml.value = imghtml+fhtml;
-                navigator.clipboard.writeText(ftml.value);
-              alert("The modified content is content,pls paste it in JS bin");
-            }
+                navigator.clipboard
+                                .writeText(ftml.value) 
+                                .then(() => {
+                                              alert("The modified content is content,pls paste it in JS bin");
+                                            })
+                               .catch(() => {
+                                               alert("something went wrong");
+                                            });
+                  }
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
