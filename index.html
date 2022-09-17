@@ -52,7 +52,7 @@
              text-align: left;
             margin: auto;
           border: 3px solid blue;
-	font-size: 50px;
+	font-size: 20px;
           }
           
           .center {
@@ -107,7 +107,7 @@
               navigator.clipboard
                           .writeText(url)
                           .then(() => {
-                                        alert("The link is copied, \nyou may paste it in new tab now");
+                                        alert("The link is copied, you may paste it now");
                                        })
                          .catch(() => {
                                          alert("something went wrong");
@@ -162,7 +162,7 @@
             
           <img src="https://images.squarespace-cdn.com/content/v1/5b04ac8b9f8770b28fbce454/1561512422024-YZ447IKXKFLHC8U1MH5A/AJP-Icons-Step-2.png?format=300w" alt="step 2" class="center">  
               
-              <textarea id="htmlsource" placeholder="Copy all content from view-source page and paste here"></textarea>
+              <input id="htmlsource" type="text" placeholder="Copy all content from view-source page and paste here">
             <button id="Delete" onclick="dlt()">Copy (Delete function cetak and add img)</button>
             <br/>
         </div>
